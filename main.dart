@@ -3,12 +3,13 @@ bool isSymmetric(Node root){
 }
 
 
-bool isMirror(Node t1, Node t2){
+bool isMirror(Node? t1, Node? t2){
   if(t1 == null && t2 == null) return true;
   if(t1 == null || t2 == null) return false;
 
 
-  return (t1.data == t2.data)
+  return (t1.data == t2.data) && isMirror(t1.left, t2.right) && isMirror(t1.right, t2.left);
+
 
 }
 
@@ -36,10 +37,12 @@ void main() {
   Node? root = newNode(1);
   root!.left = newNode(2);
   root.right = newNode(3);
-  root.left!.left = newNode(4);
-  root.left!.right = newNode(5);
+  root.right!.left = newNode(4);
+  root.right!.right = newNode(3);
+  root.left!.left = newNode(3);
+  root.left!.right = newNode(4);
 
   // Function call
-  print("Inorder traversal of binary tree is");
+  print("Result: ${isSymmetric(root)}");
 
 }

@@ -4,22 +4,17 @@ class Recursion
     {
 
 
-        System.out.println(isPalindrome("AFBFA"));
+        System.out.println(findBinary(55555, ""));
     }
 
-
-
-
-    public static  boolean isPalindrome(String input){
-        // define the base-case / stopping condition
-        if(input.length() == 0 || input.length() == 1){
-            return  true;
+public static String findBinary(int decimal, String result){
+        if(decimal == 0){
+            return result;
         }
-        // do some work to shrink the problem space
-        if(input.charAt(0) == input.charAt(input.length()-1)){
-            return isPalindrome(input.substring(1, input.length() -1));
-        }
-        // Additional base-case to handle non-palindromes
-        return  false;
-    }
+    result = decimal % 2 +result;
+        return findBinary( decimal/2, result);
+}
+
+
+
 }

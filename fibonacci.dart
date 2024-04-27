@@ -3,15 +3,15 @@
 
 
 void main(){
-  print("Result: ${fib(5)}");
+  print("Result: ${fib(9)}");
 }
 
 int fib(int n){
   if((n == 0) || (n==1)){
-    print('hit Return n = $n');
+  
     return n;
   } else{
-    print(' n = $n');
+
     return fib(n-1) +fib(n-2);
   }
 

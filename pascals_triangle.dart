@@ -22,7 +22,7 @@ List<List<int>> generate(int numRows) {
     List<int> row = [];
     row.add(1);
     for(int j = 1; j<i; j++){
-      
+      row.add(pre)
     }
     
   }

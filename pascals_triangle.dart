@@ -27,3 +27,14 @@ List<List<int>> generate(int numRows) {
     
   }
 }
+
+
+// This Dart program includes two parts:
+// Main Function: A simple for loop prints "hello" followed by a number (from 1 to 10), iterating through the numbers and interpolating their value in the string using ${}.
+// Generate Function: This function aims to generate Pascal's Triangle up to numRows. 
+// The triangle is represented as a list of lists, where each inner list corresponds to a row of the triangle. 
+// The logic starts with adding the first row [1]. For subsequent rows, the first and last elements are always 1, 
+// and intermediate elements are the sum of two elements directly above them in the triangle. 
+// However, the code is incomplete, as it does not finish populating rows correctly (row.add(pre) is incomplete).
+
+

@@ -1,5 +1,4 @@
 void main() {
-
   print("SOmethig");
   // Example usage :
 
@@ -13,17 +12,15 @@ void main() {
   ListNode? list4 = ListNode(
       100, ListNode(400, ListNode(500, ListNode(700, ListNode(1000)))));
 
+  List<ListNode?> lists = [list1, list2, list3, list4];
 
+  Solution solution = Solution();
+  ListNode? mergedList = solution.mergingSortedList(lists);
 
-      List<ListNode?> lists = [list1,list2, list3, list4];
-
-      Solution solution = Solution();
-      ListNode? mergedList = solution.mergingSortedList(lists);
-
-      while(mergedList != null){
-        print(mergedList.val);
-        mergedList = mergedList.next;
-      }
+  while (mergedList != null) {
+    print(mergedList.val);
+    mergedList = mergedList.next;
+  }
 }
 
 class ListNode {
@@ -34,38 +31,33 @@ class ListNode {
 
 class Solution {
   ListNode? mergingSortedList(List<ListNode?> lists) {
-   ListNode dummy = ListNode(0);
-   ListNode curr = dummy;
+    ListNode dummy = ListNode(0);
+    ListNode curr = dummy;
 
-   // storing data into heap
+    // storing data into heap
 
-   List<ListNode> headData= [];
-   
-   for(final list in lists){
-    if(list !=null){
-      headData.add(list);
+    List<ListNode> headData = [];
+
+    for (final list in lists) {
+      if (list != null) {
+        headData.add(list);
+      }
     }
 
-   }
+    headData.sort((a, b) => a.val.compareTo(b.val));
 
-    headData.sort((a,b) => a.val.compareTo(b.val));
+    while (headData.isNotEmpty) {
+      final currentSmallVal = headData.removeAt(0);
 
+      if (currentSmallVal.next != null) {
+        headData.add(currentSmallVal.next!);
 
-while(headData.isNotEmpty){
-  final currentSmallVal = headData.removeAt(0);
+        headData.sort((a, b) => a.val.compareTo(b.val));
+      }
 
-  if(currentSmallVal.next!=null){
-    headData.add(currentSmallVal.next!);
-
-        headData.sort((a,b) => a.val.compareTo(b.val));
-
-  }
-
-  curr.next = currentSmallVal;
-  curr = curr.next!;
-
-}
-return dummy.next;
-
+      curr.next = currentSmallVal;
+      curr = curr.next!;
+    }
+    return dummy.next;
   }
 }

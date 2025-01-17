@@ -1,9 +1,9 @@
-# Competitive problems Dart implementations
+# Competitive programming problems Dart implementation
 
-## Many times I have solved problems using dart, In this repository I've uploaded some of them 
+## Many times I have solved problems using Dart, In this repository I've uploaded some of them 
 
-**All the names of the files are problem name** 
-- Inside the solution I've provided the leet code problem link
+**All the names of the files are problem names** 
+- Inside the solution I've provided the LeetCode problems link
 
 ```bash
   git clone https://github.com/abdulawalarif/leet_code_with_dart.git

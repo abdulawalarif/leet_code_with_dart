@@ -13,6 +13,19 @@ class Solution {
   }
 }
 
-//problme: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 
- 
+ //Another way we can approach this problem. 
+
+ class Solution2 {
+  int removeDuplicates(List<int> nums) {
+    
+    List<int> uniqueNums = nums.toSet().toList();
+    for (int i = 0; i < uniqueNums.length; i++) {
+      nums[i] = uniqueNums[i];
+    }
+    return uniqueNums.length;
+  }
+}
+
+
+//problme: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
